@@ -1,18 +1,21 @@
 {
   description = "Example greeter program that shows off writeArgbashShellApplication.";
 
-  inputs.flake-utils.url = "github:numtide/flake-utils";
+  inputs = {
+    nixpkgs = { url = "github:ldub/nixpkgs/ldub/writeArgbashShellApplication"; };
+    flake-utils = { url = "github:numtide/flake-utils"; };
+  };
 
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
-        writeArgbashShellApplication = import ./write-argbash-shell-application.nix {
-          argbash = pkgs.argbash;
-          runCommandLocal = pkgs.runCommandLocal;
-          writeShellApplication = pkgs.writeShellApplication;
-        };
-        argbash-greeter = writeArgbashShellApplication {
+        # writeArgbashShellApplication = import ./write-argbash-shell-application.nix {
+        #   argbash = pkgs.argbash;
+        #   runCommandLocal = pkgs.runCommandLocal;
+        #   writeShellApplication = pkgs.writeShellApplication;
+        # };
+        argbash-greeter = pkgs.writeArgbashShellApplication {
           name = "argbash-greeter";
           text = builtins.readFile ./argbash-greeter.m4;
           runtimeInputs = [ pkgs.cowsay ];

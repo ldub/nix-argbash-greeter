@@ -17,16 +17,18 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1679644522,
-        "narHash": "sha256-Fgi0g7NHz7h+/dXFdyDmUeQrARxmfzTlkcxsyiW3dPQ=",
-        "owner": "NixOS",
+        "lastModified": 1679782810,
+        "narHash": "sha256-4TQwgprON++c3wGTZVwvroUgvrpoEn9w5hN9lzJemoQ=",
+        "owner": "ldub",
         "repo": "nixpkgs",
-        "rev": "d4660b45bc031d98cecd233babf1df7f6d64b65e",
+        "rev": "150188724b8781a89cfe6c51a2f79c344ecb0ef1",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
+        "owner": "ldub",
+        "ref": "ldub/writeArgbashShellApplication",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "root": {
